@@ -1,0 +1,71 @@
+<?php
+
+namespace app\admin\controller\e;
+
+use app\admin\model\EJobtype;
+use app\common\controller\AdminController;
+use EasyAdmin\annotation\ControllerAnnotation;
+use EasyAdmin\annotation\NodeAnotation;
+use think\App;
+
+/**
+ * @ControllerAnnotation(title="e_jobtypetag")
+ */
+class Jobtypetag extends AdminController
+{
+
+    use \app\admin\traits\Curd;
+
+    protected $pk = 'tag_id';
+
+    protected $sort = [
+        'sort' => 'desc',
+    ];
+
+    public function __construct(App $app)
+    {
+        parent::__construct($app);
+
+        $this->model = new \app\admin\model\EJobtypetag();
+        
+        $this->assign('getTaglevelList', $this->model->getTaglevelList());
+
+        $this->assign('getClassificationList', $this->model->getClassificationList());
+
+        $this->assign('getStatusList', $this->model->getStatusList());
+
+    }
+
+    /**
+     * @NodeAnotation(title="列表")
+     */
+    public function index()
+    {
+        if ($this->request->isAjax()) {
+            if (input('selectFieds')) {
+                return $this->selectList();
+            }
+            list($page, $limit, $where) = $this->buildTableParames();
+            $count = $this->model
+                ->where($where)
+                ->count();
+            $list = $this->model
+                ->where($where)
+                ->page($page, $limit)
+                ->order($this->sort)
+                ->select();
+            foreach ($list as $k => $v){
+                $list[$k]['jobtype_name'] = EJobtype::where('jobtype_id', $v['jobtype_id'])->value('jobtypename');
+            }
+            $data = [
+                'code'  => 0,
+                'msg'   => '',
+                'count' => $count,
+                'data'  => $list,
+            ];
+            return json($data);
+        }
+        return $this->fetch();
+    }
+    
+}

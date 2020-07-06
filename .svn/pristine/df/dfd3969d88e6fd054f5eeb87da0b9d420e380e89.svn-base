@@ -1,0 +1,79 @@
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+        
+        <div class="layui-form-item">
+            <label class="layui-form-label">行政区划代码</label>
+            <div class="layui-input-block">
+                <input type="text" name="regioncode" class="layui-input" lay-verify="required" placeholder="请输入行政区划代码" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">区域名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="regionname" class="layui-input" placeholder="请输入区域名称" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">区域简称</label>
+            <div class="layui-input-block">
+                <input type="text" name="regionshortname" class="layui-input" placeholder="请输入区域简称" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">上级行政区划代码</label>
+            <div class="layui-input-block">
+                <input type="text" name="superiorcode" class="layui-input" placeholder="请输入上级行政区划代码" value="0">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">经度</label>
+            <div class="layui-input-block">
+                <input type="text" name="lng" class="layui-input" placeholder="请输入经度" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">纬度</label>
+            <div class="layui-input-block">
+                <input type="text" name="lat" class="layui-input" placeholder="请输入纬度" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">级别</label>
+            <div class="layui-input-block">
+                <select name="regionlevel" lay-verify="required">
+                    <option value=''></option>
+                    {foreach $getRegionlevelList as $k=>$v}
+                    <option value='{$k}' >{$v}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-block">
+                {foreach $getStatusList as $k=>$v}
+                <input type="radio" name="status" value="{$k}" title="{$v}" {in name="k" value="0"}checked=""{/in}>
+                {/foreach}
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-block">
+                <textarea name="note" class="layui-textarea" placeholder="请输入备注"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-block">
+                <input type="text" name="sort" class="layui-input"  placeholder="请输入排序" value="">
+            </div>
+        </div>
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>

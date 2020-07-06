@@ -1,0 +1,37 @@
+<?php
+
+namespace app\admin\controller\e;
+
+use app\common\controller\AdminController;
+use EasyAdmin\annotation\ControllerAnnotation;
+use EasyAdmin\annotation\NodeAnotation;
+use think\App;
+
+/**
+ * @ControllerAnnotation(title="e_schoolthesaurus")
+ */
+class Schoolthesaurus extends AdminController
+{
+
+    use \app\admin\traits\Curd;
+
+    protected $pk = 'schoo_id';
+
+    protected $sort = [
+        'sort' => 'desc',
+    ];
+
+    public function __construct(App $app)
+    {
+        parent::__construct($app);
+
+        $this->model = new \app\admin\model\ESchoolthesaurus();
+        
+        $this->assign('getClassificationList', $this->model->getClassificationList());
+
+        $this->assign('getStatusList', $this->model->getStatusList());
+
+    }
+
+    
+}

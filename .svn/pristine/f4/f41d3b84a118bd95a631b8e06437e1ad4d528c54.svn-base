@@ -1,0 +1,22 @@
+<?php
+
+namespace app\admin\model;
+
+use app\common\model\TimeModel;
+
+class RsQualification extends TimeModel
+{
+
+    protected $name = "rs_qualification";
+
+    protected $pk = "id";
+
+    protected $deleteTime = false;
+
+
+    public function userAuthorize()
+    {
+        return $this->belongsTo('\app\admin\model\UserAuthorize', 'uid', 'uid');
+    }
+
+}

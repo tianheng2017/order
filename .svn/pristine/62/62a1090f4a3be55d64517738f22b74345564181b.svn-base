@@ -1,0 +1,29 @@
+<?php
+
+namespace app\admin\model;
+
+use app\common\model\TimeModel;
+
+class ERegioninfo extends TimeModel
+{
+
+    protected $name = "e_regioninfo";
+
+    protected $pk = "id";
+
+    protected $deleteTime = false;
+
+    
+    
+    public function getRegionlevelList()
+    {
+        return ['1'=>'省自治区、直辖市','2'=>'市地区、自治州','3'=>'县市辖区、县级市','4'=>'乡、镇街道办事处',];
+    }
+
+    public function getStatusList()
+    {
+        return ['0'=>'未开放','1'=>'已开放',];
+    }
+
+
+}

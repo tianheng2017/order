@@ -1,0 +1,62 @@
+<style>
+    .layui-word-aux{
+        height: 36px;
+        line-height: 36px;
+        color: unset!important;
+    }
+</style>
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+        
+        <div class="layui-form-item">
+            <label class="layui-form-label">学校ID</label>
+            <div class="layui-input-block">
+                <span class="layui-word-aux">{$row.schoo_id|default=''}</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">学校名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="schooname" class="layui-input" lay-verify="required" placeholder="请输入学校名称" value="{$row.schooname|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">分类</label>
+            <div class="layui-input-block">
+                <select name="classification" lay-verify="required">
+                    <option value=''></option>
+                    {foreach $getClassificationList as $k=>$v}
+                    <option value='{$k}' {in name="k" value="$row.classification"}selected=""{/in}>{$v}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-block">
+                {foreach $getStatusList as $k=>$v}
+                <input type="radio" name="status" value="{$k}" title="{$v}" {in name="k" value="$row.status"}checked=""{/in}>
+                {/foreach}
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">备注</label>
+            <div class="layui-input-block">
+                <input type="text" name="note" class="layui-input" placeholder="请输入备注" value="{$row.note|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-block">
+                <input type="text" name="sort" class="layui-input" placeholder="请输入排序" value="{$row.sort|default=''}">
+            </div>
+        </div>
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>

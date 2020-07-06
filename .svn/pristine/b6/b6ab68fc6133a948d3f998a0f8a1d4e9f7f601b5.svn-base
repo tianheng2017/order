@@ -1,0 +1,199 @@
+define(["jquery", "easy-admin"], function ($, ea) {
+
+    var init = {
+        table_elem: '#currentTable',
+        table_render_id: 'currentTableRenderId',
+        index_url: 'user.baseinfo/index',
+        add_url: 'user.baseinfo/add',
+        edit_url: 'user.baseinfo/edit',
+        delete_url: 'user.baseinfo/delete',
+        export_url: 'user.baseinfo/export',
+        modify_url: 'user.baseinfo/modify',
+        authorize_url: 'user.baseinfo/authorize_index',
+        authorize_edit_url: 'user.baseinfo/authorize_edit',
+        authorize_delete_url: 'user.baseinfo/authorize_delete',
+        locationinfo_url: 'user.baseinfo/locationinfo_index',
+        locationinfo_edit_url: 'user.baseinfo/locationinfo_edit',
+        locationinfo_delete_url: 'user.baseinfo/locationinfo_delete',
+    };
+
+    var Controller = {
+
+        index: function () {
+            ea.table.render({
+                init: init,
+                toolbar: ['refresh',
+                    [{
+                        text: '添加',
+                        url: init.add_url,
+                        method: 'open',
+                        auth: 'add',
+                        class: 'layui-btn layui-btn-normal layui-btn-sm',
+                        icon: 'fa fa-plus ',
+                        extend: 'data-full="true"',
+                    }],
+                    'delete', 'export'],
+                cols: [[
+                    {type: 'checkbox'},
+                    {field: 'uid', title: 'uid', search: false},
+                    {field: 'userAuthorize.identifier', title: '唯一标识', search: false},
+                    {field: 'nick_name', title: '昵称', search: false},
+                    {field: 'user_role', width: 80, search: false, selectList: {"1":"职场人","2":"学生"}, title: '角色'},
+                    {field: 'gender', width: 80, search: false, selectList: {"0":"女","1":"男"}, title: '性别'},
+                    {field: 'jobwantedstatus', search: false, selectList: {"1":"离职-随时到岗","2":"在职-月内到岗","3":"在职-考虑机会"}, title: '求职状态'},
+                    {field: 'vip_endtime', search: false, title: 'VIP截止时间'},
+                    {field: 'register_type', search: false, selectList: {"1":"手机号","2":"邮箱","3":"用户名","4":"qq","5":"微信","6":"支付宝"}, title: '注册方式'},
+                    {field: 'account_status', width: 100, search: false, selectList: {"1":"正常","-1":"冻结"}, title: '账号状态'},
+                    {field: 'create_time', search: false, title: '注册时间', templet: ea.table.value},
+                    {field: 'userAuthorize.identifier_type', search: 'select', hide:true, selectList: {"1":"手机号","2":"邮箱","3":"用户名"}, title: '授权方式'},
+                    {field: 'userAuthorize.area_code', search: true, hide:true, title: '区号'},
+                    {field: 'userAuthorize.identifier', search: true, hide:true, title: '唯一标识'},
+                    {
+                        width: 200,
+                        title: '操作',
+                        templet: ea.table.tool,
+                        operat: [
+                            [{
+                                text: '定位',
+                                url: init.locationinfo_url,
+                                method: 'open',
+                                auth: 'locationinfo_index',
+                                class: 'layui-btn layui-btn-xs layui-btn-normal',
+                                extend: 'data-full="true"',
+                                field: 'uid'
+                            }, {
+                                text: '授权',
+                                url: init.authorize_url,
+                                method: 'open',
+                                auth: 'authorize_index',
+                                class: 'layui-btn layui-btn-xs layui-btn',
+                                extend: 'data-full="true"',
+                                field: 'uid'
+                            }, {
+                                text: '编辑',
+                                url: init.edit_url,
+                                method: 'open',
+                                auth: 'edit',
+                                class: 'layui-btn layui-btn-xs layui-btn-success',
+                                extend: 'data-full="true"',
+                                field: 'uid'
+                            }, {
+                                text: '删除',
+                                title: '确定删除？',
+                                url: init.delete_url,
+                                method: 'request',
+                                auth: 'delete',
+                                class: 'layui-btn layui-btn-xs layui-btn-danger',
+                                field: 'uid'
+                            }]
+                        ]
+                    }
+
+                ]],
+            });
+            ea.listen();
+        },
+        add: function () {
+            ea.listen();
+        },
+        edit: function () {
+            ea.listen();
+        },
+        authorize_index: function () {
+            ea.table.render({
+                init: {
+                    table_elem: '#currentTable',
+                    table_render_id: 'currentTableRenderId',
+                    index_url: uid ? 'user.baseinfo/authorize_index' + '?uid=' + uid : '',
+                },
+                toolbar: [],
+                search: false,
+                cols: [[
+                    {field: 'id', title: 'ID'},
+                    {field: 'uid', title: 'uid'},
+                    {field: 'identifier_type', search: 'select', selectList: {"1":"手机号","2":"邮箱","3":"用户名","4":"qq","5":"微信","6":"支付宝"}, title: '授权方式'},
+                    {field: 'identifier', title: '唯一标识'},
+                    {field: 'certificate', title: '凭证'},
+                    {field: 'area_code', title: '区号'},
+                    {field: 'create_time', title: '绑定时间'},
+                    {
+                        width: 250,
+                        title: '操作',
+                        templet: ea.table.tool,
+                        operat: [
+                            [{
+                                text: '编辑',
+                                url: init.authorize_edit_url,
+                                method: 'open',
+                                auth: 'edit',
+                                class: 'layui-btn layui-btn-xs layui-btn-success',
+                            }, {
+                                text: '删除',
+                                title: '确定删除？',
+                                url: init.authorize_delete_url,
+                                method: 'request',
+                                auth: 'delete',
+                                class: 'layui-btn layui-btn-xs layui-btn-danger',
+                            }]
+                        ]
+                    }
+                ]],
+            });
+            ea.listen();
+        },
+        authorize_edit: function () {
+            ea.listen();
+        },
+        locationinfo_index: function () {
+            ea.table.render({
+                init: {
+                    table_elem: '#currentTable',
+                    table_render_id: 'currentTableRenderId',
+                    index_url: uid ? 'user.baseinfo/locationinfo_index' + '?uid=' + uid : '',
+                },
+                cols: [[
+                    {type: 'checkbox'},
+                    {field: 'uid', title: 'uid', search: false},
+                    {field: 'curr_nation', title: '所在地-国', search: false},
+                    {field: 'curr_province', title: '所在地-省', search: false},
+                    {field: 'curr_city', title: '所在地-市', search: false},
+                    {field: 'curr_district', title: '所在地-地区', search: false},
+                    {field: 'curr_regioncode', title: '行政区划代码', search: false},
+                    {field: 'location', title: '具体地址', search: false},
+                    {field: 'longitude', title: '经度', search: false},
+                    {field: 'latitude', title: '纬度', search: false},
+                    {
+                        width: 120,
+                        title: '操作',
+                        templet: ea.table.tool,
+                        operat: [
+                            [{
+                                text: '编辑',
+                                url: init.edit_url,
+                                method: 'open',
+                                auth: 'edit',
+                                class: 'layui-btn layui-btn-xs layui-btn-success',
+                                field: 'uid'
+                            }, {
+                                text: '删除',
+                                title: '确定删除？',
+                                url: init.delete_url,
+                                method: 'request',
+                                auth: 'delete',
+                                class: 'layui-btn layui-btn-xs layui-btn-danger',
+                                field: 'uid'
+                            }]
+                        ]
+                    }
+
+                ]],
+            });
+            ea.listen();
+        },
+        locationinfo_edit: function () {
+            ea.listen();
+        },
+
+    };
+    return Controller;
+});

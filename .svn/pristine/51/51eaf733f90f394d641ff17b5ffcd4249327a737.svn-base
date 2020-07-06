@@ -1,0 +1,39 @@
+<?php
+
+namespace app\admin\controller\e;
+
+use app\common\controller\AdminController;
+use EasyAdmin\annotation\ControllerAnnotation;
+use EasyAdmin\annotation\NodeAnotation;
+use think\App;
+
+/**
+ * @ControllerAnnotation(title="e_qualificationcer")
+ */
+class Qualificationcer extends AdminController
+{
+
+    use \app\admin\traits\Curd;
+
+    protected $pk = "qc_id";
+
+    protected $sort = [
+        'create_time' => 'desc',
+    ];
+
+    public function __construct(App $app)
+    {
+        parent::__construct($app);
+
+        $this->model = new \app\admin\model\EQualificationcer();
+        
+        $this->assign('getTaglevelList', $this->model->getTaglevelList());
+
+        $this->assign('getClassificationList', $this->model->getClassificationList());
+
+        $this->assign('getStatusList', $this->model->getStatusList());
+
+    }
+
+    
+}

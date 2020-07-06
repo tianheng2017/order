@@ -1,0 +1,69 @@
+define(["jquery", "easy-admin"], function ($, ea) {
+
+    var init = {
+        table_elem: '#currentTable',
+        table_render_id: 'currentTableRenderId',
+        index_url: 'e.jobtypetag/index',
+        add_url: 'e.jobtypetag/add',
+        edit_url: 'e.jobtypetag/edit',
+        delete_url: 'e.jobtypetag/delete',
+        export_url: 'e.jobtypetag/export',
+        modify_url: 'e.jobtypetag/modify',
+    };
+
+    var Controller = {
+
+        index: function () {
+            ea.table.render({
+                init: init,
+                cols: [[
+                    {type: 'checkbox'},
+                    {field: 'tag_id', title: '职位关键词ID'},
+                    {field: 'tagname', title: '职位关键词'},
+                    {field: 'jobtype_id', title: '职位类型ID'},
+                    {field: 'jobtype_name', title: '职位类型名称'},
+                    {field: 'superiorid', title: '上级职位关键词ID'},
+                    {field: 'taglevel', search: 'select', selectList: {"1":"一级分类","2":"二级分类"}, title: '级别'},
+                    {field: 'classification', search: 'select', selectList: {"1":"官方词库","2":"用户自建"}, title: '分类'},
+                    {field: 'status', search: 'select', selectList: {"0":"未开放", "1":"已开放"}, title: '状态'},
+                    {field: 'note', title: '备注', search: false},
+                    {field: 'sort', title: '排序', search: false},
+                    {field: 'create_time', title: '创建时间', search: false},
+                    {
+                        width: 120,
+                        title: '操作',
+                        templet: ea.table.tool,
+                        operat: [
+                            [{
+                                text: '编辑',
+                                url: init.edit_url,
+                                method: 'open',
+                                auth: 'edit',
+                                class: 'layui-btn layui-btn-xs layui-btn-success',
+                                field: 'tag_id'
+                            }, {
+                                text: '删除',
+                                title: '确定删除？',
+                                url: init.delete_url,
+                                method: 'request',
+                                auth: 'delete',
+                                class: 'layui-btn layui-btn-xs layui-btn-danger',
+                                field: 'idtag_id'
+                            }]
+                        ]
+                    }
+
+                ]],
+            });
+
+            ea.listen();
+        },
+        add: function () {
+            ea.listen();
+        },
+        edit: function () {
+            ea.listen();
+        },
+    };
+    return Controller;
+});

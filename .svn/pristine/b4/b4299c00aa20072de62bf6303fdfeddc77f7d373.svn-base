@@ -1,0 +1,1 @@
+a:1:{s:5:"admin";a:13:{s:2:"id";i:1;s:8:"auth_ids";N;s:8:"head_img";s:29:"/static/admin/images/head.jpg";s:8:"username";s:5:"admin";s:5:"phone";N;s:6:"remark";s:0:"";s:9:"login_num";i:2;s:4:"sort";i:0;s:6:"status";i:1;s:11:"create_time";s:19:"2020-07-01 23:08:51";s:11:"update_time";s:19:"2020-07-02 17:23:23";s:11:"delete_time";N;s:11:"expire_time";b:1;}}

@@ -1,0 +1,28 @@
+<?php
+
+namespace app\admin\model;
+
+use app\common\model\TimeModel;
+
+class UserAuthorize extends TimeModel
+{
+
+    protected $name = "user_authorize";
+
+    protected $pk = "id";
+
+    protected $deleteTime = false;
+
+
+    public function userBaseinfo()
+    {
+        return $this->belongsTo('\app\admin\model\UserBaseinfo', 'uid', 'uid');
+    }
+
+    
+    public function getIdentifierTypeList()
+    {
+        return ['1'=>'手机号','2'=>'邮箱','3'=>'用户名','4'=>'qq','5'=>'微信','6'=>'支付宝',];
+    }
+
+}

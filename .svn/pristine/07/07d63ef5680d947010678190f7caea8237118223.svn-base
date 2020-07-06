@@ -1,0 +1,22 @@
+<?php
+
+namespace app\admin\model;
+
+use app\common\model\TimeModel;
+
+class UserLocationinfo extends TimeModel
+{
+
+    protected $name = "user_locationinfo";
+
+    protected $pk = "uid";
+
+    protected $deleteTime = false;
+
+    
+    public function userAuthorize()
+    {
+        return $this->belongsTo('\app\admin\model\UserAuthorize', 'uid', 'uid');
+    }
+
+}

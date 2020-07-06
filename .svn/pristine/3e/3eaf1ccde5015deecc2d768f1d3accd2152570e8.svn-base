@@ -1,0 +1,90 @@
+<style>
+    .layui-word-aux{
+        height: 36px;
+        line-height: 36px;
+        color: unset!important;
+    }
+</style>
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+        
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户uid</label>
+            <div class="layui-input-block">
+                <span class="layui-word-aux">{$row.uid|default=''}</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">客户端名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="client_name" class="layui-input" placeholder="请输入客户端名称" value="{$row.client_name|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">客户端版本号</label>
+            <div class="layui-input-block">
+                <input type="text" name="client_version" class="layui-input" placeholder="请输入客户端版本号" value="{$row.client_version|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">设备名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="device_name" class="layui-input" placeholder="请输入设备名称" value="{$row.device_name|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">设备型号</label>
+            <div class="layui-input-block">
+                <input type="text" name="device_model" class="layui-input" placeholder="请输入设备型号" value="{$row.device_model|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">系统版本号</label>
+            <div class="layui-input-block">
+                <input type="text" name="os_version" class="layui-input" placeholder="请输入系统版本号" value="{$row.os_version|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">设备ID</label>
+            <div class="layui-input-block">
+                <input type="text" name="device_id" class="layui-input" placeholder="请输入设备ID" value="{$row.device_id|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">唯一设备标识码</label>
+            <div class="layui-input-block">
+                <input type="text" name="udid" class="layui-input" lay-verify="required" placeholder="请输入唯一设备标识码" value="{$row.udid|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">苹果设备IDFA</label>
+            <div class="layui-input-block">
+                <input type="text" name="idfa" class="layui-input" placeholder="请输入苹果设备IDFA" value="{$row.idfa|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">苹果设备IDFV</label>
+            <div class="layui-input-block">
+                <input type="text" name="idfv" class="layui-input" placeholder="请输入苹果设备IDFV" value="{$row.idfv|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">扩展字段1</label>
+            <div class="layui-input-block">
+                <input type="text" name="extend1" class="layui-input" placeholder="请输入扩展字段1" value="{$row.extend1|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">扩展字段2</label>
+            <div class="layui-input-block">
+                <input type="text" name="extend2" class="layui-input" placeholder="请输入扩展字段2" value="{$row.extend2|default=''}">
+            </div>
+        </div>
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>

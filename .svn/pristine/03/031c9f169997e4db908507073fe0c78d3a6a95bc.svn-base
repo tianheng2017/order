@@ -1,0 +1,10 @@
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <table id="currentTable" class="layui-table layui-hide"
+               data-auth-add="{:auth('rs.educationalexp/add')}"
+               data-auth-edit="{:auth('rs.educationalexp/edit')}"
+               data-auth-delete="{:auth('rs.educationalexp/delete')}"
+               lay-filter="currentTable">
+        </table>
+    </div>
+</div>

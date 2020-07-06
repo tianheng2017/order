@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e4167856-9195-43d9-83a7-acdf831306b1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/admin/controller/e" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/app/admin/controller/rs" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/app/admin/controller/user" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/CpCompany.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/CpRecruitment.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/EIndustry.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/EJobtype.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/EJobtypetag.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/EQualificationcer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/ERegioninfo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/ESchoolthesaurus.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/MallCate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/MallGoods.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/RsEducationalexp.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/RsProjectexp.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/RsQualification.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/UserAuthorize.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/UserBaseinfo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/UserExtrainfo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/UserLocationinfo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/UserLoginLog.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/UserRegisterLog.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/model/UserRenewalvip.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/view/e" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/app/admin/view/index/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/view/index/welcome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/view/rs" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/app/admin/view/user" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/public/static/admin/js/e" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/public/static/admin/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/admin/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/admin/js/rs" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/public/static/admin/js/user" beforeDir="true" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/qiniu/php-sdk" />
+      <path value="$PROJECT_DIR$/vendor/aliyuncs/oss-sdk-php" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/eaglewu/swoole-ide-helper" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/adbario/php-dot-notation" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/client" />
+      <path value="$PROJECT_DIR$/vendor/qcloud/cos-sdk-v5" />
+      <path value="$PROJECT_DIR$/vendor/zhongshaofa/easy-admin" />
+      <path value="$PROJECT_DIR$/vendor/jianyan74/php-excel" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-captcha" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-template" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-multi-app" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-helper" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-orm" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle-services" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-view" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/danielstjules/stringy" />
+      <path value="$PROJECT_DIR$/vendor/topthink/framework" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/command" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem-cached-adapter" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1eIkyCa9ssJBSbLf7Us6fBOWMmv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\Administrator\Desktop\yeepay" />
+          <option name="myCopyRoot" value="C:\Users\Administrator\Desktop\yeepay" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\Administrator\Desktop\yeepay" />
+          <option name="myCopyRoot" value="C:\Users\Administrator\Desktop\yeepay" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e4167856-9195-43d9-83a7-acdf831306b1" name="Default Changelist" comment="" />
+      <created>1594016746828</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594016746828</updated>
+      <workItem from="1594016749392" duration="557000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="547" y="103" key="CommitChangelistDialog2" timestamp="1594017116842">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="547" y="103" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594017116842" />
+  </component>
+</project>

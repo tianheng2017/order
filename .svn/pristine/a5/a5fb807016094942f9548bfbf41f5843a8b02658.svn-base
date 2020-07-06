@@ -1,0 +1,17 @@
+<style>
+    .layui-table-tool,.layui-table-page {
+        display: none;
+    }
+</style>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <table id="currentTable" class="layui-table layui-hide"
+               data-auth-edit="{:auth('user.baseinfo/authorize_edit')}"
+               data-auth-delete="{:auth('user.baseinfo/authorize_delete')}"
+               lay-filter="currentTable">
+        </table>
+    </div>
+</div>
+<script>
+    var uid = '{$uid}';
+</script>

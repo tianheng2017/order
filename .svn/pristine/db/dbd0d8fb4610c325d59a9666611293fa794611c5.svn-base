@@ -1,0 +1,6 @@
+[2020-07-02 16:25:11][sql] CONNECT:[ UseTime:0.076465s ] mysql:host=203.195.132.137;port=3306;dbname=employ2020;charset=utf8
+[2020-07-02 16:25:11][sql] SHOW FULL COLUMNS FROM user_baseinfo [ RunTime:0.058296s ]
+[2020-07-02 16:25:11][sql] SELECT table_name,table_comment FROM information_schema.TABLES WHERE table_schema = 'easyadmin' AND table_name = 'user_baseinfo' [ RunTime:0.050762s ]
+[2020-07-02 16:25:30][sql] CONNECT:[ UseTime:0.076687s ] mysql:host=203.195.132.137;port=3306;dbname=employ2020;charset=utf8
+[2020-07-02 16:25:30][sql] SHOW FULL COLUMNS FROM user_baseinfo [ RunTime:0.058743s ]
+[2020-07-02 16:25:30][sql] SELECT table_name,table_comment FROM information_schema.TABLES WHERE table_schema = 'easyadmin' AND table_name = 'user_baseinfo' [ RunTime:0.051143s ]

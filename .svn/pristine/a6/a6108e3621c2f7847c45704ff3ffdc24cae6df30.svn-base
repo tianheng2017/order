@@ -1,0 +1,10 @@
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <table id="currentTable" class="layui-table layui-hide"
+               data-auth-add="{:auth('e.jobtypetag/add')}"
+               data-auth-edit="{:auth('e.jobtypetag/edit')}"
+               data-auth-delete="{:auth('e.jobtypetag/delete')}"
+               lay-filter="currentTable">
+        </table>
+    </div>
+</div>

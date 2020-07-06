@@ -1,0 +1,67 @@
+define(["jquery", "easy-admin"], function ($, ea) {
+
+    var init = {
+        table_elem: '#currentTable',
+        table_render_id: 'currentTableRenderId',
+        index_url: 'user.login_log/index',
+        add_url: 'user.login_log/add',
+        edit_url: 'user.login_log/edit',
+        delete_url: 'user.login_log/delete',
+        export_url: 'user.login_log/export',
+        modify_url: 'user.login_log/modify',
+    };
+
+    var Controller = {
+
+        index: function () {
+            ea.table.render({
+                init: init,
+                cols: [[
+                    {type: 'checkbox'},
+                    {field: 'id', search: false, title: 'id'},
+                    {field: 'uid', search: false, title: '用户uid'},
+                    {field: 'login_type', search: false, selectList: {"1":"手机号","2":"邮箱","3":"用户名","4":"qq","5":"微信","6":"支付宝"}, title: '登录方式'},
+                    {field: 'command', search: false, selectList: {"1":"登录成功","2":"登录失败","3":"登出成功","4":"登出失败"}, title: '操作类型'},
+                    {field: 'login_ip', search: false, title: '登录ip'},
+                    {field: 'create_time', title: '操作时间', search: false},
+                    {field: 'userAuthorize.identifier_type', search: 'select', hide:true, selectList: {"1":"手机号","2":"邮箱","3":"用户名"}, title: '授权方式'},
+                    {field: 'userAuthorize.area_code', search: true, hide:true, title: '区号'},
+                    {field: 'userAuthorize.identifier', search: true, hide:true, title: '唯一标识'},
+                    {
+                        width: 120,
+                        title: '操作',
+                        templet: ea.table.tool,
+                        operat: [
+                            [{
+                                text: '编辑',
+                                url: init.edit_url,
+                                method: 'open',
+                                auth: 'edit',
+                                class: 'layui-btn layui-btn-xs layui-btn-success',
+                                field: 'id'
+                            }, {
+                                text: '删除',
+                                title: '确定删除？',
+                                url: init.delete_url,
+                                method: 'request',
+                                auth: 'delete',
+                                class: 'layui-btn layui-btn-xs layui-btn-danger',
+                                field: 'id'
+                            }]
+                        ]
+                    }
+
+                ]],
+            });
+
+            ea.listen();
+        },
+        add: function () {
+            ea.listen();
+        },
+        edit: function () {
+            ea.listen();
+        },
+    };
+    return Controller;
+});

@@ -1,0 +1,35 @@
+<?php
+
+namespace app\admin\controller\e;
+
+use app\common\controller\AdminController;
+use EasyAdmin\annotation\ControllerAnnotation;
+use EasyAdmin\annotation\NodeAnotation;
+use think\App;
+
+/**
+ * @ControllerAnnotation(title="e_regioninfo")
+ */
+class Regioninfo extends AdminController
+{
+
+    use \app\admin\traits\Curd;
+
+    protected $sort = [
+        'sort' => 'desc',
+    ];
+
+    public function __construct(App $app)
+    {
+        parent::__construct($app);
+
+        $this->model = new \app\admin\model\ERegioninfo();
+        
+        $this->assign('getRegionlevelList', $this->model->getRegionlevelList());
+
+        $this->assign('getStatusList', $this->model->getStatusList());
+
+    }
+
+    
+}

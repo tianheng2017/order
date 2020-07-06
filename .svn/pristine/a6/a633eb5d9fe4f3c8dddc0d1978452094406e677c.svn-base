@@ -1,0 +1,47 @@
+<?php
+
+namespace app\admin\model;
+
+use app\common\model\TimeModel;
+
+class RsEducationalexp extends TimeModel
+{
+
+    protected $name = "rs_educationalexp";
+
+    protected $pk = 'id';
+
+    protected $deleteTime = false;
+
+    
+    public function userAuthorize()
+    {
+        return $this->belongsTo('\app\admin\model\UserAuthorize', 'uid', 'uid');
+    }
+
+    
+    public function getEducationList()
+    {
+        return ['1'=>'未选择','2'=>'初中及以下','3'=>'中专/中技','4'=>'高中','5'=>'大专','6'=>'本科','7'=>'硕士','8'=>'博士',];
+    }
+
+    public function getFullTimeList()
+    {
+        return ['1'=>'全日制','2'=>'非全日制',];
+    }
+
+    public function getEdutimeleftAttr($value){
+        if (empty($value)){
+            return '无';
+        }
+        return date('Y-m-d', $value);
+    }
+
+    public function getEdutimerightAttr($value){
+        if (empty($value)){
+            return '无';
+        }
+        return date('Y-m-d', $value);
+    }
+
+}

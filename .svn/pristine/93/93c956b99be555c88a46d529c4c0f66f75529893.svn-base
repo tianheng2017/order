@@ -1,0 +1,10 @@
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <table id="currentTable" class="layui-table layui-hide"
+               data-auth-add="{:auth('e.regioninfo/add')}"
+               data-auth-edit="{:auth('e.regioninfo/edit')}"
+               data-auth-delete="{:auth('e.regioninfo/delete')}"
+               lay-filter="currentTable">
+        </table>
+    </div>
+</div>

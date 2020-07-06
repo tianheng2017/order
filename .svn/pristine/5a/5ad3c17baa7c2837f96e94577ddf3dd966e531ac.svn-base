@@ -1,0 +1,70 @@
+define(["jquery", "easy-admin"], function ($, ea) {
+
+    var init = {
+        table_elem: '#currentTable',
+        table_render_id: 'currentTableRenderId',
+        index_url: 'e.regioninfo/index',
+        add_url: 'e.regioninfo/add',
+        edit_url: 'e.regioninfo/edit',
+        delete_url: 'e.regioninfo/delete',
+        export_url: 'e.regioninfo/export',
+        modify_url: 'e.regioninfo/modify',
+    };
+
+    var Controller = {
+
+        index: function () {
+            ea.table.render({
+                init: init,
+                cols: [[
+                    {type: 'checkbox'},
+                    {field: 'id', title: 'ID'},
+                    {field: 'regioncode', title: '行政区划代码'},
+                    {field: 'regionname', title: '区域名称'},
+                    {field: 'regionshortname', title: '区域简称'},
+                    {field: 'superiorcode', title: '上级行政区划代码'},
+                    {field: 'lng', title: '经度', search: false},
+                    {field: 'lat', title: '纬度', search: false},
+                    {field: 'regionlevel', search: 'select', selectList: {"1":"省自治区、直辖市","2":"市地区、自治州","3":"县市辖区、县级市","4":"乡、镇街道办事处"}, title: '级别'},
+                    {field: 'status', search: 'select', selectList: {"0":"未开放","1":"已开放"}, title: '状态', templet: ea.table.switch},
+                    {field: 'note', title: '备注', search: false},
+                    {field: 'sort', title: '排序', search: false},
+                    {field: 'create_time', title: '创建时间', search: false},
+                    {
+                        width: 120,
+                        title: '操作',
+                        templet: ea.table.tool,
+                        operat: [
+                            [{
+                                text: '编辑',
+                                url: init.edit_url,
+                                method: 'open',
+                                auth: 'edit',
+                                class: 'layui-btn layui-btn-xs layui-btn-success',
+                                field: 'id'
+                            }, {
+                                text: '删除',
+                                title: '确定删除？',
+                                url: init.delete_url,
+                                method: 'request',
+                                auth: 'delete',
+                                class: 'layui-btn layui-btn-xs layui-btn-danger',
+                                field: 'id'
+                            }]
+                        ]
+                    }
+
+                ]],
+            });
+
+            ea.listen();
+        },
+        add: function () {
+            ea.listen();
+        },
+        edit: function () {
+            ea.listen();
+        },
+    };
+    return Controller;
+});

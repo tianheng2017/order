@@ -1,0 +1,48 @@
+<style>
+    .layui-word-aux{
+        height: 36px;
+        line-height: 36px;
+        color: unset!important;
+    }
+</style>
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+        
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户ID</label>
+            <div class="layui-input-block">
+                <span class="layui-word-aux">{$row.uid|default=''}</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">续费时长</label>
+            <div class="layui-input-block">
+                <input type="text" name="renewaltime" class="layui-input" placeholder="请输入续费时长" value="{$row.renewaltime|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">截止时间</label>
+            <div class="layui-input-block">
+                <input type="text" name="end_time" class="layui-input" placeholder="请输入截止时间" value="{$row.end_time|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">之前 VIP总时长（s）</label>
+            <div class="layui-input-block">
+                <input type="text" name="beforevipduration" class="layui-input" placeholder="请输入之前 VIP总时长（s）" value="{$row.beforevipduration|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">充完后 VIP总时长（s）</label>
+            <div class="layui-input-block">
+                <input type="text" name="aftervipduration" class="layui-input" placeholder="请输入充完后 VIP总时长（s）" value="{$row.aftervipduration|default=''}">
+            </div>
+        </div>
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>

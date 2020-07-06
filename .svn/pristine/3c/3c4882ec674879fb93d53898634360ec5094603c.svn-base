@@ -1,0 +1,123 @@
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+        
+        <div class="layui-form-item">
+            <label class="layui-form-label">账号</label>
+            <div class="layui-input-block">
+                <input type="text" name="user_account" class="layui-input" placeholder="请输入账号" value="{$row.user_account|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">昵称</label>
+            <div class="layui-input-block">
+                <input type="text" name="nick_name" class="layui-input" placeholder="请输入昵称" value="{$row.nick_name|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">角色</label>
+            <div class="layui-input-block">
+                {foreach $getUserRole as $k=>$v}
+                <input type="radio" name="user_role" value="{$k}" title="{$v}" {in name="k" value="$row.user_role"}checked=""{/in}>
+                {/foreach}
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-block">
+                {foreach $getGenderList as $k=>$v}
+                <input type="radio" name="gender" value="{$k}" title="{$v}" {in name="k" value="$row.gender"}checked=""{/in}>
+                {/foreach}
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">生日</label>
+            <div class="layui-input-block">
+                <input type="text" name="birthday" data-date="" data-date-type="date" class="layui-input" placeholder="请输入生日" value="{$row.birthday|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">个人签名</label>
+            <div class="layui-input-block">
+                <input type="text" name="signature" class="layui-input" placeholder="请输入个人签名" value="{$row.signature|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">优势</label>
+            <div class="layui-input-block">
+                <input type="text" name="advantage" class="layui-input" placeholder="请输入优势" value="{$row.advantage|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">参加工作时间</label>
+            <div class="layui-input-block">
+                <input type="text" name="joinjobtime" data-date="" data-date-type="date" class="layui-input" placeholder="请输入参加工作时间" value="{$row.joinjobtime|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">求职状态</label>
+            <div class="layui-input-block">
+                <select name="jobwantedstatus" lay-verify="required">
+                    <option value=''></option>
+                    {foreach $getJobwantedstatusList as $k=>$v}
+                    <option value='{$k}' {in name="k" value="$row.jobwantedstatus"}selected=""{/in}>{$v}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label required">头像</label>
+            <div class="layui-input-block layuimini-upload">
+                <input name="face" class="layui-input layui-col-xs6" placeholder="请上传头像" value="{$row.face|default=''}">
+                <div class="layuimini-upload-btn">
+                    <span><a class="layui-btn" data-upload="face" data-upload-number="one" data-upload-exts="png|jpg|ico|jpeg" data-upload-icon="image"><i class="fa fa-upload"></i> 上传</a></span>
+                    <span><a class="layui-btn layui-btn-normal" id="select_face" data-upload-select="face" data-upload-number="one" data-upload-mimetype="image/*"><i class="fa fa-list"></i> 选择</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">微信号</label>
+            <div class="layui-input-block">
+                <input type="text" name="wechatnumber" class="layui-input" placeholder="请输入微信号" value="{$row.wechatnumber|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">VIP截止时间</label>
+            <div class="layui-input-block">
+                <input type="text" name="vip_endtime" data-date="" data-date-type="datetime" class="layui-input" placeholder="请输入VIP截止时间" value="{$row.vip_endtime|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">注册方式</label>
+            <div class="layui-input-block">
+                <select name="register_type" lay-verify="required">
+                    <option value=''></option>
+                    {foreach $getRegisterTypeList as $k=>$v}
+                    <option value='{$k}' {in name="k" value="$row.register_type"}selected=""{/in}>{$v}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">账号状态</label>
+            <div class="layui-input-block">
+                {foreach $getAccountStatusList as $k=>$v}
+                <input type="radio" name="account_status" value="{$k}" title="{$v}" {in name="k" value="$row.account_status"}checked=""{/in}>
+                {/foreach}
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户设备push_token</label>
+            <div class="layui-input-block">
+                <input type="text" name="device_push_token" class="layui-input" placeholder="请输入用户设备push_token" value="{$row.device_push_token|default=''}">
+            </div>
+        </div>
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,38 @@
+<?php
+
+namespace app\admin\model;
+
+use app\common\model\TimeModel;
+
+class UserLoginLog extends TimeModel
+{
+
+    protected $name = "user_login_log";
+
+    protected $pk = "id";
+
+    protected $deleteTime = false;
+
+    
+    public function userAuthorize()
+    {
+        return $this->belongsTo('\app\admin\model\UserAuthorize', 'uid', 'uid');
+    }
+
+    
+    public function getLoginTypeList()
+    {
+        return ['1'=>'手机号','2'=>'邮箱','3'=>'用户名','4'=>'qq','5'=>'微信','6'=>'支付宝',];
+    }
+
+    public function getCommandList()
+    {
+        return ['1'=>'登录成功','2'=>'登录失败','3'=>'登出成功','4'=>'登出失败',];
+    }
+
+    public function getCreateTimeAttr($value)
+    {
+        return date('Y-m-d H:i:s', $value);
+    }
+
+}

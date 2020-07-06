@@ -1,0 +1,34 @@
+<?php
+
+namespace app\admin\model;
+
+use app\common\model\TimeModel;
+
+class EJobtype extends TimeModel
+{
+
+    protected $name = "e_jobtype";
+
+    protected $pk = "jobtype_id";
+
+    protected $deleteTime = false;
+
+    
+    
+    public function getJobtypelevelList()
+    {
+        return ['1'=>'一级分类','2'=>'二级分类','3'=>'三级分类',];
+    }
+
+    public function getClassificationList()
+    {
+        return ['1'=>'求职职位','2'=>'公司职工职位',];
+    }
+
+    public function getStatusList()
+    {
+        return ['0'=>'未开放','1'=>'已开放',];
+    }
+
+
+}

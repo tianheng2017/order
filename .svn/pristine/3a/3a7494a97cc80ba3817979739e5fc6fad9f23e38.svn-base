@@ -1,0 +1,109 @@
+<?php
+
+namespace app\admin\model;
+
+use app\common\model\TimeModel;
+
+class UserBaseinfo extends TimeModel
+{
+
+    protected $name = "user_baseinfo";
+
+    protected $deleteTime = false;
+
+    protected $pk = "uid";
+
+    public function userAuthorize()
+    {
+        return $this->belongsTo('\app\admin\model\UserAuthorize', 'uid', 'uid');
+    }
+
+    //生成账号uid
+    public function createUid()
+    {
+        $uid = "";
+        $okcreat = false;
+        while(!$okcreat) {
+            $randstrarr = explode(" ", microtime());
+            $randstrarr[0] = str_replace("0", "", $randstrarr[0]);
+            $randstrarr[0] = str_replace(".", "", $randstrarr[0]);
+            $randstr = $randstrarr[1] . $randstrarr[0] . mt_rand(11111, 99999) . mt_rand(11111, 99999);
+            $uid = substr($randstr, 0, 18);
+            if (!UserAuthorize::where('uid', $uid)->find()){
+                $okcreat = true;
+            }
+        }
+        return $uid;
+    }
+
+    public function getUserRole()
+    {
+        return ['1'=>'职场人','2'=>'学生',];
+    }
+
+    public function getGenderList()
+    {
+        return ['0'=>'女','1'=>'男',];
+    }
+
+    public function getJobwantedstatusList()
+    {
+        return ['1'=>'离职-随时到岗','2'=>'在职-月内到岗','3'=>'在职-考虑机会',];
+    }
+
+    public function getRegisterTypeList()
+    {
+        return ['1'=>'手机号','2'=>'邮箱','3'=>'用户名','4'=>'qq','5'=>'微信','6'=>'支付宝',];
+    }
+
+    public function getAccountStatusList()
+    {
+        return ['1'=>'正常','-1'=>'冻结',];
+    }
+
+    public function getIdentifierTypeList()
+    {
+        return ['1'=>'手机号','2'=>'邮箱','3'=>'用户名','4'=>'qq','5'=>'微信','6'=>'支付宝',];
+    }
+
+    public function getCreateTimeAttr($value){
+        if (empty($value)){
+            return '';
+        }
+        return date('Y-m-d', $value);
+    }
+
+    public function getBirthdayAttr($value){
+        if (empty($value)){
+            return '';
+        }
+        return date('Y-m-d', $value);
+    }
+
+    public function setBirthdayAttr($value){
+        return strtotime($value);
+    }
+
+    public function getJoinjobtimeAttr($value){
+        if (empty($value)){
+            return '';
+        }
+        return date('Y-m-d', $value);
+    }
+
+    public function setJoinjobtimeAttr($value){
+        return strtotime($value);
+    }
+
+    public function setVipEndtimeAttr($value){
+        return strtotime($value);
+    }
+
+    public function getVipEndtimeAttr($value){
+        if (empty($value)){
+            return '无';
+        }
+        return date('Y-m-d H:i:s', $value);
+    }
+
+}

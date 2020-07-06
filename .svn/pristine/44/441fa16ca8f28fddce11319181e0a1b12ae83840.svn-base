@@ -1,0 +1,22 @@
+<?php
+
+namespace app\admin\model;
+
+use app\common\model\TimeModel;
+
+class UserExtrainfo extends TimeModel
+{
+
+    protected $name = "user_extrainfo";
+
+    protected $pk = "uid";
+
+    protected $deleteTime = false;
+
+    
+    public function userAuthorize()
+    {
+        return $this->belongsTo('\app\admin\model\UserAuthorize', 'uid', 'uid');
+    }
+
+}

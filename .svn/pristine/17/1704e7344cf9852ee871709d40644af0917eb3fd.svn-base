@@ -1,0 +1,39 @@
+<?php
+
+namespace app\admin\controller\e;
+
+use app\common\controller\AdminController;
+use EasyAdmin\annotation\ControllerAnnotation;
+use EasyAdmin\annotation\NodeAnotation;
+use think\App;
+
+/**
+ * @ControllerAnnotation(title="e_jobtype")
+ */
+class Jobtype extends AdminController
+{
+
+    use \app\admin\traits\Curd;
+
+    protected $pk = "jobtype_id";
+
+    protected $sort = [
+        'create_time' => 'desc',
+    ];
+
+    public function __construct(App $app)
+    {
+        parent::__construct($app);
+
+        $this->model = new \app\admin\model\EJobtype();
+        
+        $this->assign('getJobtypelevelList', $this->model->getJobtypelevelList());
+
+        $this->assign('getClassificationList', $this->model->getClassificationList());
+
+        $this->assign('getStatusList', $this->model->getStatusList());
+
+    }
+
+    
+}

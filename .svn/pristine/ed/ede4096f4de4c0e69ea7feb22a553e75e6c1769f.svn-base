@@ -1,0 +1,59 @@
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+        
+        <div class="layui-form-item">
+            <label class="layui-form-label">uid</label>
+            <div class="layui-input-block">
+                <input type="text" name="uid" class="layui-input" lay-verify="required" placeholder="请输入uid" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">所在地-国</label>
+            <div class="layui-input-block">
+                <input type="text" name="curr_nation" class="layui-input" placeholder="请输入所在地-国" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">所在地-省</label>
+            <div class="layui-input-block">
+                <input type="text" name="curr_province" class="layui-input" placeholder="请输入所在地-省" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">所在地-市</label>
+            <div class="layui-input-block">
+                <input type="text" name="curr_city" class="layui-input" placeholder="请输入所在地-市" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">所在地-地区</label>
+            <div class="layui-input-block">
+                <input type="text" name="curr_district" class="layui-input" placeholder="请输入所在地-地区" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">具体地址</label>
+            <div class="layui-input-block">
+                <input type="text" name="location" class="layui-input" placeholder="请输入具体地址" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">经度</label>
+            <div class="layui-input-block">
+                <input type="text" name="longitude" class="layui-input"  placeholder="请输入经度" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">纬度</label>
+            <div class="layui-input-block">
+                <input type="text" name="latitude" class="layui-input"  placeholder="请输入纬度" value="">
+            </div>
+        </div>
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>

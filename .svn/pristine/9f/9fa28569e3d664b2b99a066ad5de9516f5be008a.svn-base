@@ -1,0 +1,24 @@
+<?php
+
+namespace app\admin\model;
+
+use app\common\model\TimeModel;
+
+class RsProjectexp extends TimeModel
+{
+
+    protected $name = "rs_projectexp";
+
+    protected $pk = 'id';
+
+    protected $deleteTime = false;
+
+    
+    public function userAuthorize()
+    {
+        return $this->belongsTo('\app\admin\model\UserAuthorize', 'uid', 'uid');
+    }
+
+    
+
+}
